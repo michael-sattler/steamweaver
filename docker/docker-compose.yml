@@ -1,0 +1,40 @@
+services:
+  web:
+    build:
+      context: ./web
+    ports:
+      - "8080:80"
+    volumes:
+      - ../public:/var/www/html
+    environment:
+      APP_ENV: development
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:11.4.10
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: daybook
+      MARIADB_USER: daybook
+      MARIADB_PASSWORD: daybook
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: unless-stopped
+    environment:
+      PMA_HOST: db
+      PMA_USER: daybook
+      PMA_PASSWORD: daybook
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
+
+volumes:
+  db_data:

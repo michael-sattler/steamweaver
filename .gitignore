@@ -1,0 +1,4 @@
+public/config/development.config.php
+public/config/staging.config.php
+public/config/production.config.php
+public/logs/*.log
