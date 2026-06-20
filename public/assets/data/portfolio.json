@@ -1,0 +1,212 @@
+[
+  {
+    "name": "Fantasy Football Hawaii",
+    "url": "https://fantasyfootballhawaii.com",
+    "stage": "Live",
+    "tagline": "Fantasy football built for Hawaii's local fan community. Members draft, trade, and talk trash all season long, with rules and scoring tuned for island play. It's local fandom, gamified. Since 1994.",
+    "logo": "https://fantasyfootballhawaii.com/ffh-2025/images/logo_2024c.png",
+    "bg": "#006737",
+    "text": "#FFFFFF",
+    "border": "#006737",
+    "background-image": "/assets/images/portfolio/bkgd_ffh.png"
+  },
+  {
+    "name": "The Founders Guild",
+    "url": "https://thefoundersguild.org/",
+    "stage": "Live",
+    "tagline": "A community connecting founders for coaching, learning, and mutual support. Members get structured guidance, peer accountability, and a network of people building alongside them. It's less a course and more a guild you actually belong to.",
+    "logo": "/assets/images/portfolio/logo_foundersguild.png",
+    "bg": "#222222",
+    "text": "#ffffff",
+    "border": "#1e293b",
+    "background-image": "/assets/images/portfolio/bkgd_foundersguild.png"
+  },
+  {
+    "name": "The Founders School",
+    "url": "https://thefounderschool.info",
+    "stage": "Live",
+    "tagline": "Practical, no-fluff lessons for first-time founders. Each course breaks down one hard problem - validation, pricing, legal setup - into steps you can act on today. No theory for theory's sake.",
+    "logo": "/assets/images/portfolio/logo_thefounderschool.png",
+    "bg": "#09090B",
+    "text": "#FFFFFF",
+    "border": "#F97316",
+    "background-image": "/assets/images/portfolio/bkgd_founderschool.png"
+  },
+  {
+    "name": "Steamlands Fiction Press",
+    "url": "https://steamlandsfictionpress.com",
+    "stage": "Live",
+    "tagline": "A small press publishing neovictorian, steamtech, and speculative fiction. SFP curates serialized stories and novels set in richly imagined alternate worlds. It's built for readers who want a world to return to, not just a single book.",
+    "logo": "/assets/images/portfolio/logo_sfp-black_trans.png",
+    "bg": "#000000",
+    "text": "#FFFFFF",
+    "border": "#fcb900",
+    "background-image": "/assets/images/portfolio/bkgd_sfp.png"
+  },
+  {
+    "name": "My Amanuensis",
+    "url": "https://myamanuensis.com",
+    "stage": "Beta",
+    "tagline": "An AI writing assistant that helps you capture and organize your ideas. It listens, transcribes, and structures scattered notes into something usable, without getting in the way of your voice. Built for writers who think out loud.",
+    "logo": "/assets/images/portfolio/logo_amanuensiswhite+primary-trans.png",
+    "bg": "#08605f",
+    "text": "#ffffff",
+    "border": "#08605f",
+    "background-image": ""
+  },
+  {
+    "name": "Product Market Forge",
+    "url": "https://productmarketforge.com",
+    "stage": "Building",
+    "tagline": "A workbench for stress-testing and validating product ideas before you build them. It walks founders through structured exercises - market sizing, positioning, early customer signal - so bad ideas die early and cheap. The goal is conviction before code.",
+    "logo": "/assets/images/portfolio/logo_pmf-square1.png",
+    "bg": "#faf7f2",
+    "text": "#8b3a1f",
+    "border": "#8b3a1f",
+    "background-image": ""
+  },
+  {
+    "name": "Circle Magnet",
+    "url": "https://circlemagnet.net",
+    "stage": "Waitlist",
+    "tagline": "Every founder needs to assemble a circle of people to help with their venture, but most CRMs aren't built for that. CircleMagnet delivers everything a founder needs to manage their early relationships, and nothing they don't, right out of the box. It's currently in waitlist mode while the first cohort comes on board.",
+    "logo": "/assets/images/portfolio/logo_circlemagnet-square-black+white.png",
+    "bg": "#FFFFFF",
+    "text": "#08605f",
+    "border": "#08605f",
+    "background-image": ""
+  },
+  {
+    "name": "Unicapress",
+    "url": "https://unicapress.com",
+    "stage": "Waitlist",
+    "tagline": "A publishing platform that prints stories which exist only once, for one reader. A worldbuilder authors a canon, a voice, a way of telling, and the press prepares an edition: a complete story, set once, fixed the moment it is read, and never produced again.",
+    "logo": "/assets/images/portfolio/logo_unicapress1.png",
+    "bg": "#f4efe3",
+    "text": "#9e3328",
+    "border": "#9e3328",
+    "background-image": ""
+  },
+  {
+    "name": "Boston Sojourner Society",
+    "url": "https://bostonsojournersociety.com",
+    "stage": "Waitlist",
+    "tagline": "Immersive nightlife through collaborative fiction - a travel society for sojourners exploring Boston. Members step into a living story that unfolds across the city's bars, streets, and hidden corners. It's part scavenger hunt, part theater, part secret society.",
+    "logo": "https://bostonsojournersociety.com/app/assets/images/bss-logo1.png",
+    "bg": "#0f0b09",
+    "text": "#e8d5a3",
+    "border": "#e8d5a3",
+    "background-image": ""
+  },
+  {
+    "name": "Daybook",
+    "url": "",
+    "stage": "Beta",
+    "tagline": "A lightweight task management app for digital product development. It's built for small teams who want structure without the overhead of a heavyweight project tool. Track priorities, ship features, move on.",
+    "logo": "/assets/images/portfolio/logo-daybook_square.png",
+    "bg": "#1f2937",
+    "text": "#FFFFFF",
+    "border": "#1f2937",
+    "background-image": ""
+  },
+  {
+    "name": "Slotly",
+    "url": "",
+    "stage": "Concept",
+    "tagline": "Scheduling a meeting shouldn't take ten messages back and forth. Slotly is a free, lightweight layer on top of your existing calendar that lets you visually propose multiple time options at once, then books automatically across calendars once someone picks. No logins for recipients, no new system to learn - just go from \"we should meet\" to \"see you then.\"",
+    "logo": "https://thefoundersguild.org/app/assets/uploaded-images/projectimage-29.png?v=1776969704",
+    "bg": "",
+    "text": "#000000",
+    "border": "#000000",
+    "background-image": ""
+  },
+  {
+    "name": "Huddle.ai",
+    "url": "",
+    "stage": "Concept",
+    "tagline": "Today's AI chatbots assume one user per conversation, collapsing couples, families, and teams into a single anonymous voice. Huddle.ai is a shared chat platform where multiple authenticated users talk with the same LLM at once, each message attributed to a specific person. The AI can then mediate, synthesize, and remember what each participant actually said.",
+    "logo": "https://thefoundersguild.org/app/assets/uploaded-images/projectimage-31.png?v=1776544003",
+    "bg": "",
+    "text": "#000000",
+    "border": "#000000",
+    "background-image": ""
+  },
+  {
+    "name": "Cedric",
+    "url": "",
+    "stage": "Building",
+    "tagline": "A personal assistant that consolidates calendars, email, and communication channels into a sophisticated AI life assistant. Cedric is built to manage the logistics of a busy life so its owner doesn't have to. One assistant, every channel.",
+    "logo": "/assets/images/portfolio/logo_cedric-square-ltblue+trans.png",
+    "bg": "#0f172a",
+    "text": "#DDDDFF",
+    "border": "#334155",
+    "background-image": ""
+  },
+  {
+    "name": "Vernian Sea",
+    "url": "",
+    "stage": "Building",
+    "tagline": "A strategy build game set in an underwater steamtech world. Players construct and defend submerged settlements powered by Verne-inspired engineering, racing rival factions for resources and territory. It's empire-building, just below the waterline.",
+    "logo": "/assets/images/portfolio/logo_verniansea.png",
+    "bg": "",
+    "text": "#000000",
+    "border": "#000000",
+    "background-image": "/assets/images/portfolio/bkgd_verniansea.png"
+  },
+  {
+    "name": "Venture",
+    "url": "",
+    "stage": "Building",
+    "tagline": "A massively multiplayer realtime worldbuilding game set in the near future, focused on exploring and developing the stars. Players colonize, govern, and grow settlements alongside thousands of others in a persistent universe. It's civilization-building at galactic scale.",
+    "logo": "/assets/images/portfolio/logo2-venture_square.png",
+    "bg": "#000000",
+    "text": "#8794ad",
+    "border": "#8794ad",
+    "background-image": "/assets/images/portfolio/bkgd_venture.png"
+  },
+  {
+    "name": "Konohiki",
+    "url": "",
+    "stage": "Concept",
+    "tagline": "A Hawaiian-rooted game centered on stewardship and resource management. Players take on the role of a konohiki, balancing the needs of land, sea, and community across generations. It's resource strategy grounded in a real cultural tradition.",
+    "logo": "/assets/images/portfolio/logo1-konohiki_square.png",
+    "bg": "#f6f1e8",
+    "text": "#53453c",
+    "border": "#53453c",
+    "background-image": "/assets/images/portfolio/bkgd_konohiki.png"
+  },
+  {
+    "name": "Consilium",
+    "url": "",
+    "stage": "Stealth",
+    "tagline": "A platform for facilitating venture development for international business consortia that includes governments, academia, enterprises, entrepreneurs, and investors. Consilium is designed to coordinate complex, multi-stakeholder ventures that no single organization could launch alone. Currently in stealth while the founding consortium comes together.",
+    "logo": "",
+    "bg": "",
+    "text": "",
+    "border": "",
+    "background-image": ""
+  },
+  {
+    "name": "Hundred Bets Fund",
+    "url": "",
+    "stage": "Stealth",
+    "tagline": "An investment fund designed for AI entrepreneurs at scale. Rather than making a handful of large bets, it spreads capital across a hundred small ones, betting that volume beats precision in an AI-driven market. It's a fund built for the long tail.",
+    "logo": "",
+    "bg": "",
+    "text": "",
+    "border": "",
+    "background-image": ""
+  },
+  {
+    "name": "Overwatch",
+    "url": "",
+    "stage": "Stealth",
+    "tagline": "Overwatch helps investors and early-stage startups manage their relationships efficiently through a unified platform that integrates reporting, coaching, and real-time communication. It keeps startups on track to meet their goals while giving investors a clear, real-time view into portfolio health.",
+    "logo": "",
+    "bg": "",
+    "text": "",
+    "border": "",
+    "background-image": ""
+  }
+
+]

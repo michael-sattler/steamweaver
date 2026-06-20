@@ -45,7 +45,7 @@ a { text-decoration: none; }
   border-radius: 6px;
 }
 .sw-hero-logo { max-height: 200px; margin-bottom: 28px; }
-.sw-footer-logo { height: 60px; margin-bottom: 10px; }
+.sw-footer-logo { height: 122px; margin-bottom: 10px; }
 .sw-navbar .nav-link {
   color: rgba(246, 241, 231, 0.85);
   font-weight: 500;
@@ -112,7 +112,7 @@ a { text-decoration: none; }
   margin-bottom: 24px;
 }
 .sw-lead {
-  font-size: 1.15rem;
+  font-size: 1.0rem;
   color: rgba(246, 241, 231, 0.85);
   line-height: 1.7;
   margin-bottom: 36px;
@@ -182,43 +182,104 @@ a { text-decoration: none; }
 /* ---------- portfolio ---------- */
 
 .sw-venture-card {
+  --sw-card-bg: #fff;
+  --sw-card-text: var(--sw-ink);
+  --sw-card-border: rgba(184, 138, 68, 0.25);
   display: flex;
-  flex-direction: column;
-  background: #fff;
-  border: 1px solid rgba(184, 138, 68, 0.25);
+  flex-direction: row;
+  align-items: stretch;
+  background: var(--sw-card-bg);
+  border: 2px solid var(--sw-card-border);
   border-radius: 8px;
-  padding: 26px;
-  color: var(--sw-ink);
+  padding: 22px;
+  gap: 20px;
+  color: var(--sw-card-text);
+  text-decoration: none;
+  cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
 }
 .sw-venture-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 24px rgba(17, 52, 58, 0.12);
-  border-color: var(--sw-brass);
 }
-.sw-venture-card .sw-h3 { margin-top: 8px; }
-.sw-venture-link {
-  margin-top: auto;
-  padding-top: 14px;
-  font-weight: 600;
+.sw-venture-card .sw-h3 { margin: 0 0 8px; color: var(--sw-card-text); }
+
+.sw-venture-logo-col {
+  flex: 0 0 33%;
+  max-width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sw-venture-logo {
+  max-width: 100%;
+  object-fit: contain;
+}
+.sw-venture-logo-fallback {
+  font-family: var(--sw-font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.sw-venture-content-col { flex: 1 1 66%; min-width: 0; }
+.sw-venture-tagline {
+  padding-top: 1rem;
+  color: inherit;
+  opacity: 0.82;
   font-size: 0.9rem;
-  color: var(--sw-copper);
+  line-height: 1.35rem;
 }
 
 .sw-stage-badge {
   display: inline-block;
-  align-self: flex-start;
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   padding: 4px 10px;
   border-radius: 999px;
+  border: 1px solid transparent;
+  margin: 0 0 8px 10px;
 }
 .sw-stage-live { background: #dcf3e4; color: #1c7a43; }
 .sw-stage-beta { background: #ddeefc; color: #1768ac; }
 .sw-stage-building { background: #fbeacb; color: #9a6213; }
 .sw-stage-concept { background: #ece6f3; color: #6b4c9a; }
+.sw-stage-waitlist { background: #fde8ef; color: #b3265a; border-color: #f3a9c4; }
+.sw-stage-stealth { background: #1c1c24; color: #d7d2f0; border-color: #4a4566; }
+
+@media (max-width: 575px) {
+  .sw-venture-card { flex-direction: column; }
+  .sw-venture-logo-col { max-width: 100%; flex: none; }
+}
+
+/* ---------- contact form ---------- */
+
+.sw-contact-panel {
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(155, 176, 198, 0.35);
+  border-radius: 8px;
+  padding: 28px 32px;
+}
+.sw-contact-label {
+  color: var(--sw-cream);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.sw-contact-input {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(155, 176, 198, 0.5);
+  border-radius: 4px;
+  padding: 10px 14px;
+}
+.sw-contact-input:focus {
+  border-color: var(--sw-brass-light);
+  box-shadow: 0 0 0 0.2rem rgba(155, 176, 198, 0.25);
+}
+.sw-contact-success .sw-h3 { color: var(--sw-cream); }
 
 /* ---------- footer ---------- */
 

@@ -4,28 +4,10 @@
  * Standalone static-ish page; does not use the SaaS app config/login scaffold.
  */
 
-$ventures = [
-    ['name' => 'Fantasy Football Hawaii', 'url' => 'https://fantasyfootballhawaii.com', 'stage' => 'Live', 'tagline' => 'Fantasy football leagues built for Hawaii\'s local fan community.'],
-    ['name' => 'Product Market Forge', 'url' => 'https://productmarketforge.com', 'stage' => 'Building', 'tagline' => 'A workbench for stress-testing and validating product ideas before you build them.'],
-    ['name' => 'Circle Magnet', 'url' => 'https://circlemagnet.net', 'stage' => 'Concept', 'tagline' => 'Community-building tools that pull like-minded people into shared circles.'],
-    ['name' => 'The Founders School', 'url' => 'https://thefounderschool.info', 'stage' => 'Building', 'tagline' => 'Practical, no-fluff lessons for first-time founders.'],
-    ['name' => 'The Founders Guild', 'url' => 'https://thefoundersguild.org', 'stage' => 'Concept', 'tagline' => 'A guild connecting founders for mentorship, accountability, and mutual support.'],
-    ['name' => 'My Amanuensis', 'url' => 'https://myamanuensis.com', 'stage' => 'Beta', 'tagline' => 'An AI writing assistant that helps you capture and organize your ideas.'],
-    ['name' => 'Steamlands Fiction Press', 'url' => 'https://steamlandsfictionpress.com', 'stage' => 'Live', 'tagline' => 'A small press publishing steampunk and speculative fiction.'],
-    ['name' => 'Vernian Sea', 'url' => 'https://verniansea.com', 'stage' => 'Concept', 'tagline' => 'A Jules Verne-inspired adventure fiction universe.'],
-    ['name' => 'System Governor', 'url' => 'https://systemgovernor.com', 'stage' => 'Concept', 'tagline' => 'Frameworks and tooling for governing complex systems and organizations.'],
-    ['name' => 'Boston Sojourner Society', 'url' => 'https://bostonsojournersociety.com', 'stage' => 'Concept', 'tagline' => 'A travel society and community for sojourners exploring Boston.'],
-    ['name' => 'Cedric', 'url' => 'https://cedric.com', 'stage' => 'Concept', 'tagline' => 'A personal brand platform built around a singular name.'],
-    ['name' => 'Slotly', 'url' => 'https://slotly.com', 'stage' => 'Building', 'tagline' => 'Dead-simple scheduling that slots right into your day.'],
-    ['name' => 'Huddle.ai', 'url' => 'https://huddle.ai', 'stage' => 'Building', 'tagline' => 'An AI-powered assistant for meetings and team collaboration.'],
-    ['name' => 'Unicapress', 'url' => 'https://unicapress.com', 'stage' => 'Concept', 'tagline' => 'A boutique press publishing distinctive, singular voices.'],
-    ['name' => 'Consilium', 'url' => 'https://consilium.org', 'stage' => 'Concept', 'tagline' => 'An advisory council and knowledge-sharing platform for founders.'],
-    ['name' => 'Konohiki', 'url' => 'https://konohiki.com', 'stage' => 'Concept', 'tagline' => 'A Hawaiian-rooted brand centered on stewardship and resource management.'],
-    ['name' => 'Hundred Bets Fund', 'url' => 'https://hundredbetsfund.com', 'stage' => 'Concept', 'tagline' => 'A fund built around many small, shared-stake wagers.'],
-    ['name' => 'Overwatch', 'url' => 'https://overwatch.com', 'stage' => 'Concept', 'tagline' => 'A monitoring and oversight brand for keeping watch over what matters.'],
-];
+$ventures = json_decode(file_get_contents(__DIR__ . '/assets/data/portfolio.json'), true);
+$ventures = array_filter($ventures, fn($v) => $v['stage'] !== 'Stealth');
 
-$stageOrder = ['Live' => 0, 'Beta' => 1, 'Building' => 2, 'Concept' => 3];
+$stageOrder = ['Live' => 0, 'Beta' => 1, 'Waitlist' => 2, 'Building' => 3, 'Concept' => 4, 'Stealth' => 5];
 usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stage']]);
 ?>
 <!DOCTYPE html>
@@ -46,7 +28,7 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
 <nav class="navbar navbar-expand-lg navbar-dark sw-navbar fixed-top">
   <div class="container">
     <a class="navbar-brand sw-brand d-flex align-items-center" href="#top">
-      <span class="sw-brand-mark"></span> Steamweaver
+      <img src="/assets/images/logo_2-horiz.png" alt="Steamweaver Microventures" class="sw-brand-logo" style="max-height: 60px;">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
       <span class="navbar-toggler-icon"></span>
@@ -56,7 +38,7 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
         <li class="nav-item"><a class="nav-link" href="#solution">How It Works</a></li>
         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
         <li class="nav-item"><a class="nav-link" href="#who">Who It's For</a></li>
-        <li class="nav-item"><a class="btn sw-btn-outline ms-2" href="#contact">Get in Touch</a></li>
+        <li class="nav-item"><a class="btn sw-btn-outline btn-md ms-2" href="#contact">Get more information</a></li>
       </ul>
     </div>
   </div>
@@ -66,13 +48,11 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
   <div class="sw-hero-overlay"></div>
   <div class="container sw-hero-content text-center">
     <img src="/assets/images/logo_2-square.png" alt="Steamweaver Microventures" class="sw-hero-logo">
-    <h1 class="sw-h1">Building businesses,<br>one microventure at a time.</h1>
-    <p class="sw-lead">A scalable framework for generating, validating, and operating small online
-      businesses — legal, financial, and operational infrastructure included, so founders can focus
-      on creativity and growth instead of paperwork.</p>
+    <h1 class="sw-h1">Building viable businesses,<br>one microventure at a time.</h1>
+    <p class="sw-lead">Steamweaver is a scalable framework for generating, validating, and operating businesses with a technology focus. So entrepreneurs can focus on creativity and growth instead of gruntwork.</p>
     <div class="sw-hero-ctas">
-      <a href="#portfolio" class="btn sw-btn-primary btn-lg">See the Portfolio</a>
-      <a href="#contact" class="btn sw-btn-outline btn-lg">Start a Venture</a>
+      <a href="#portfolio" class="btn sw-btn-primary btn-md">See the Portfolio</a>
+      <a href="#contact" class="btn sw-btn-outline btn-md">Start a Venture</a>
     </div>
   </div>
 </header>
@@ -82,19 +62,15 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
     <div class="row g-5 align-items-start">
       <div class="col-md-6">
         <p class="sw-tag">The Problem</p>
-        <h2 class="sw-h2">Launching one business is easy. Launching a dozen is a logistics nightmare.</h2>
-        <p class="sw-body">Doing the legal, financial, and operational work once, by hand, is manageable.
-          Doing it over and over for every new idea becomes a barrier to speed and innovation —
-          leading to missed opportunities and wasted resources, especially for founders trying to
-          diversify their portfolio of ventures.</p>
+        <h2 class="sw-h2">Most people start a business once.<br>And they do it the hard way.</h2>
+        <p class="sw-body">Most founders starting a new business have never done it before, so they reinvent the wheel and make it up as they go along ... and <strong>make avoidable mistakes</strong> and <strong>get bogged down with the grunt work</strong> ... a major distraction from the important work of creation and growth.</p>
       </div>
       <div class="col-md-6">
         <p class="sw-tag">The Solution</p>
         <h2 class="sw-h2">One framework. Every venture launches faster.</h2>
         <p class="sw-body">Steamweaver Microventures offers a comprehensive framework that simplifies
-          developing and managing multiple ventures. Structured resources and standardized processes
-          let founders focus on creativity and growth — turning ideas into reality with greater
-          efficiency and confidence.</p>
+          developing, validating, and launching your company. Structured resources, standardized processes, veteram human guidance, and a proven roadmap that 
+          lets founders focus on what matters most: <strong>turning ideas into reality.</strong></p>
       </div>
     </div>
   </div>
@@ -107,12 +83,12 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
     <div class="row g-4">
       <?php
       $features = [
-          ['icon' => 'fa-scale-balanced', 'title' => 'Legal & Financial Infrastructure', 'body' => 'LLC formation and a dedicated bank account for each venture.'],
-          ['icon' => 'fa-layer-group', 'title' => 'Consolidated Subscriptions', 'body' => 'One set of essential third-party services, shared across the portfolio.'],
-          ['icon' => 'fa-ruler-combined', 'title' => 'Standardized Development', 'body' => 'Templates and processes built for rapid, repeatable execution.'],
-          ['icon' => 'fa-credit-card', 'title' => 'Integrated Payments', 'body' => 'Payment mechanisms ready to go from day one.'],
-          ['icon' => 'fa-headset', 'title' => 'Specialist Access', 'body' => 'Legal and accounting support on tap, without hiring a team.'],
-          ['icon' => 'fa-arrows-spin', 'title' => 'Fold-In Existing Projects', 'body' => 'Bring an existing project into the portfolio quickly.'],
+          ['icon' => 'fa-arrow-up-right-dots', 'title' => 'Concept Articulation', 'body' => 'Experienced guidance for shaping a business idea into a viable proposition.'],
+          ['icon' => 'fa-ruler-combined', 'title' => 'Bulletproof Business Creation', 'body' => 'Time-tested templates, workflows, and best practices for rapid venture creation.'],
+          ['icon' => 'fa-bullhorn', 'title' => 'Scientific Market Validation', 'body' => 'A proven process for validating a business idea before investing time and resources.'],
+          ['icon' => 'fa-screwdriver-wrench', 'title' => 'Hands-On Product Development', 'body' => 'Product development, coding, and CTO services for getting your product to market.'],
+          ['icon' => 'fa-user-tie', 'title' => 'Professional Guidance', 'body' => 'Experienced entrperenurial coaching and support on tap, without hiring a team.'],
+          ['icon' => 'fa-arrows-spin', 'title' => 'Fold-In Existing Projects', 'body' => 'Leverage shortcuts and existing resources to bring a project into the portfolio.'],
       ];
       foreach ($features as $f): ?>
         <div class="col-md-4">
@@ -136,8 +112,8 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
       $steps = [
           ['n' => '01', 'title' => 'Generate', 'body' => 'New business ideas are shaped using proven templates and resources.'],
           ['n' => '02', 'title' => 'Validate', 'body' => 'Each idea is tested for a viable premise before serious investment.'],
-          ['n' => '03', 'title' => 'Structure', 'body' => 'LLC formation, payment processing, and third-party services are set up.'],
-          ['n' => '04', 'title' => 'Launch & Operate', 'body' => 'Steamweaver handles the operational details while founders build.'],
+          ['n' => '03', 'title' => 'Build', 'body' => 'Get your product built quickly with product development, coding, and technology services.'],
+          ['n' => '04', 'title' => 'Launch & Iterate', 'body' => 'Start learning what works and what doesn\'t, and iterate quickly.'],
       ];
       foreach ($steps as $s): ?>
         <div class="col-md-3">
@@ -162,14 +138,36 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
     <div class="row g-4 mt-3">
       <?php foreach ($ventures as $v):
           $stageClass = 'sw-stage-' . strtolower($v['stage']);
+          $tag = $v['url'] ? 'a' : 'div';
+          $style = '';
+          if (!empty($v['bg'])) { $style .= '--sw-card-bg:' . htmlspecialchars($v['bg']) . ';'; }
+          if (!empty($v['text'])) { $style .= '--sw-card-text:' . htmlspecialchars($v['text']) . ';'; }
+          if (!empty($v['border'])) { $style .= '--sw-card-border:' . htmlspecialchars($v['border']) . ';'; }
+          if (!empty($v['background-image'])) {
+//            $style .= "background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('" . htmlspecialchars($v['background-image']) . "');background-size:cover;background-position:center;";
+            $style .= "background-image: url('" . htmlspecialchars($v['background-image']) . "');background-size:cover;background-position:center;";
+          }
       ?>
-        <div class="col-sm-6 col-lg-4">
-          <a href="<?= htmlspecialchars($v['url']) ?>" target="_blank" rel="noopener" class="sw-venture-card h-100">
-            <span class="sw-stage-badge <?= $stageClass ?>"><?= htmlspecialchars($v['stage']) ?></span>
-            <h3 class="sw-h3"><?= htmlspecialchars($v['name']) ?></h3>
-            <p class="sw-body"><?= htmlspecialchars($v['tagline']) ?></p>
-            <span class="sw-venture-link">Visit site <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-          </a>
+        <div class="col-12 col-lg-6">
+          <<?= $tag ?>
+            <?php if ($v['url']): ?>href="<?= htmlspecialchars($v['url']) ?>" target="_blank" rel="noopener"<?php endif; ?>
+            class="sw-venture-card h-100"
+            <?php if ($style): ?>style="<?= $style ?>"<?php endif; ?>
+          >
+            <div class="sw-venture-logo-col">
+              <?php if (!empty($v['logo'])): ?>
+                <img src="<?= htmlspecialchars($v['logo']) ?>" alt="<?= htmlspecialchars($v['name']) ?> logo" class="sw-venture-logo">
+              <?php else: ?>
+                <span class="sw-venture-logo-fallback"><?= htmlspecialchars($v['name']) ?></span>
+              <?php endif; ?>
+            </div>
+            <div class="sw-venture-content-col">
+              <span class="sw-stage-badge float-end <?= $stageClass ?>"><?= htmlspecialchars($v['stage']) ?></span>
+              <h3 class="sw-h3 d-none"><?= htmlspecialchars($v['name']) ?></h3>
+              <p class="sw-body sw-venture-tagline"><?= htmlspecialchars($v['tagline']) ?></p>
+              <div class="btn" style="background-color: transparent; color: <?= htmlspecialchars($v['text']) ?>; border-color: <?= htmlspecialchars($v['text']) ?>;">Learn More</div>
+            </div>
+          </<?= $tag ?>>
         </div>
       <?php endforeach; ?>
     </div>
@@ -184,8 +182,8 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
       <div class="col-md-4">
         <div class="sw-who-card h-100">
           <i class="fa-solid fa-chart-line sw-feature-icon"></i>
-          <h3 class="sw-h3">Entrepreneurs</h3>
-          <p class="sw-body">Looking to diversify their business portfolio without multiplying their
+          <h3 class="sw-h3">Entrepeneurs</h3>
+          <p class="sw-body">Looking to augment their skills with proven frameworks and best practices without multiplying their
             administrative burden.</p>
         </div>
       </div>
@@ -193,7 +191,7 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
         <div class="sw-who-card h-100">
           <i class="fa-solid fa-store sw-feature-icon"></i>
           <h3 class="sw-h3">Small Business Owners</h3>
-          <p class="sw-body">Seeking efficient operational frameworks to run more than one venture
+          <p class="sw-body">Seeking efficient product and technology frameworks to use the latest technologies to augment their business.
             well.</p>
         </div>
       </div>
@@ -201,8 +199,8 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
         <div class="sw-who-card h-100">
           <i class="fa-solid fa-handshake sw-feature-icon"></i>
           <h3 class="sw-h3">Collaborators & Partners</h3>
-          <p class="sw-body">Interested in launching ventures alongside a framework that handles the
-            logistics.</p>
+          <p class="sw-body">Interested in launching ventures with a framework that handles the
+            grunt work and gets you to market quickly.</p>
         </div>
       </div>
     </div>
@@ -215,9 +213,38 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
     <h2 class="sw-h2">The cost of launching online businesses has never been lower.</h2>
     <p class="sw-body-light sw-section-intro mx-auto">Advances in technology and the availability of
       affordable tools have opened up new possibilities for aspiring entrepreneurs. Steamweaver
-      Microventures is building a portfolio of low-risk ventures designed to generate compounding
+      Microventures is partnering to build a portfolio of low-risk ventures designed to generate compounding
       revenue over time.</p>
-    <a href="mailto:michael.sattler360@gmail.com" class="btn sw-btn-primary btn-lg mt-3">Get in Touch</a>
+    <button type="button" class="btn sw-btn-primary btn-md mt-3" data-bs-toggle="collapse" data-bs-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
+    Find out how Steamweaver might help you
+    </button>
+
+    <div class="collapse mt-4" id="contactForm">
+      <div class="sw-contact-panel mx-auto text-start">
+        <div id="contactSuccess" class="sw-contact-success text-center d-none" aria-live="polite">
+          <p class="sw-h3 mb-2">Thanks for reaching out!</p>
+          <p class="sw-body-light mb-4">We received your message and will be in touch soon.</p>
+          <a href="https://meetings.hubspot.com/sattler" class="btn sw-btn-primary btn-md" target="_blank" rel="noopener">Book a free consultation</a>
+        </div>
+
+        <form id="contactFormEl" class="sw-contact-form" novalidate>
+          <div class="mb-3">
+            <h3 class="sw-h3">Get the free comprehensive guide to launching a business with Steamweaver</h3>
+            <label for="contactName" class="form-label sw-contact-label">Name</label>
+            <input type="text" class="form-control sw-contact-input" id="contactName" name="name" required autocomplete="name" maxlength="200">
+          </div>
+          <div class="mb-3">
+            <label for="contactEmail" class="form-label sw-contact-label">Email</label>
+            <input type="email" class="form-control sw-contact-input" id="contactEmail" name="email" required autocomplete="email">
+          </div>
+          <div id="contactError" class="alert alert-danger d-none mb-3" role="alert"></div>
+          <div class="text-center">
+            <button type="submit" class="btn sw-btn-primary btn-md" id="contactSubmit">Get the guide</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -229,5 +256,51 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function () {
+  var form = document.getElementById('contactFormEl');
+  var success = document.getElementById('contactSuccess');
+  var errorBox = document.getElementById('contactError');
+  var submitBtn = document.getElementById('contactSubmit');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    errorBox.classList.add('d-none');
+    errorBox.textContent = '';
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: document.getElementById('contactName').value.trim(),
+        email: document.getElementById('contactEmail').value.trim()
+      })
+    })
+      .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+      .then(function (result) {
+        if (!result.ok || !result.data.ok) {
+          throw new Error(result.data.error || 'Something went wrong. Please try again.');
+        }
+        form.classList.add('d-none');
+        success.classList.remove('d-none');
+      })
+      .catch(function (err) {
+        errorBox.textContent = err.message;
+        errorBox.classList.remove('d-none');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      });
+  });
+})();
+</script>
 </body>
 </html>
