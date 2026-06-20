@@ -111,7 +111,7 @@
   },
   {
     "name": "Slotly",
-    "url": "",
+    "url": "https://thefoundersguild.org/venture/slotly",
     "stage": "Concept",
     "tagline": "Scheduling a meeting shouldn't take ten messages back and forth. Slotly is a free, lightweight layer on top of your existing calendar that lets you visually propose multiple time options at once, then books automatically across calendars once someone picks. No logins for recipients, no new system to learn - just go from \"we should meet\" to \"see you then.\"",
     "logo": "https://thefoundersguild.org/app/assets/uploaded-images/projectimage-29.png?v=1776969704",
@@ -122,7 +122,7 @@
   },
   {
     "name": "Huddle.ai",
-    "url": "",
+    "url": "https://thefoundersguild.org/venture/huddle-ai",
     "stage": "Concept",
     "tagline": "Today's AI chatbots assume one user per conversation, collapsing couples, families, and teams into a single anonymous voice. Huddle.ai is a shared chat platform where multiple authenticated users talk with the same LLM at once, each message attributed to a specific person. The AI can then mediate, synthesize, and remember what each participant actually said.",
     "logo": "https://thefoundersguild.org/app/assets/uploaded-images/projectimage-31.png?v=1776544003",

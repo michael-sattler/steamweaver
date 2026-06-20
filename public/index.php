@@ -167,7 +167,9 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
               <span class="sw-stage-badge float-end <?= $stageClass ?>"><?= htmlspecialchars($v['stage']) ?></span>
               <h3 class="sw-h3 d-none"><?= htmlspecialchars($v['name']) ?></h3>
               <p class="sw-body sw-venture-tagline"><?= htmlspecialchars($v['tagline']) ?></p>
-              <div class="btn" style="background-color: transparent; color: <?= htmlspecialchars($v['text']) ?>; border-color: <?= htmlspecialchars($v['text']) ?>;">Learn More</div>
+              <?php if ($v['url'] && strlen($v['url']) > 0): ?>
+                <div class="btn" style="background-color: transparent; color: <?= htmlspecialchars($v['text']) ?>; border-color: <?= htmlspecialchars($v['text']) ?>;">Learn More</div>
+              <?php endif; ?>
             </div>
           </<?= $tag ?>>
         </div>
