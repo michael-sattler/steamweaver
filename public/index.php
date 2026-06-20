@@ -27,14 +27,16 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
 
 <nav class="navbar navbar-expand-lg navbar-dark sw-navbar fixed-top">
   <div class="container">
-    <a class="navbar-brand sw-brand d-flex align-items-center" href="#top">
-      <img src="/assets/images/logo_2-horiz.png" alt="Steamweaver Microventures" class="sw-brand-logo" style="max-height: 60px;">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="sw-navbar-header d-flex align-items-center w-100">
+      <a class="navbar-brand sw-brand d-flex align-items-center" href="#top">
+        <img src="/assets/images/logo_2-horiz.png" alt="Steamweaver Microventures" class="sw-brand-logo">
+      </a>
+      <button class="navbar-toggler ms-auto flex-shrink-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
     <div class="collapse navbar-collapse" id="navMain">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-lg-auto">
         <li class="nav-item"><a class="nav-link" href="#solution">How It Works</a></li>
         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
         <li class="nav-item"><a class="nav-link" href="#who">Who It's For</a></li>
@@ -63,14 +65,14 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
       <div class="col-md-6">
         <p class="sw-tag">The Problem</p>
         <h2 class="sw-h2">Most people start a business once.<br>And they do it the hard way.</h2>
-        <p class="sw-body">Most founders starting a new business have never done it before, so they reinvent the wheel and make it up as they go along ... and <strong>make avoidable mistakes</strong> and <strong>get bogged down with the grunt work</strong> ... a major distraction from the important work of creation and growth.</p>
+        <p class="sw-body">Most entrepreneurs starting a new business have never done it before, so they reinvent the wheel and make it up as they go along ... and <strong>make avoidable mistakes</strong> and <strong>get bogged down with the grunt work</strong>. A major distraction from the important work of creation.</p>
       </div>
       <div class="col-md-6">
         <p class="sw-tag">The Solution</p>
         <h2 class="sw-h2">One framework. Every venture launches faster.</h2>
-        <p class="sw-body">Steamweaver Microventures offers a comprehensive framework that simplifies
-          developing, validating, and launching your company. Structured resources, standardized processes, veteram human guidance, and a proven roadmap that 
-          lets founders focus on what matters most: <strong>turning ideas into reality.</strong></p>
+        <p class="sw-body">Steamweaver Microventures offers a comprehensive business creation framework that simplifies
+          developing, validating, and launching your company. Structured resources, standardized processes, veteran human guidance, and proven roadmaps that 
+          let founders focus on what matters most: <strong>turning ideas into reality.</strong></p>
       </div>
     </div>
   </div>
@@ -84,7 +86,7 @@ usort($ventures, fn($a, $b) => $stageOrder[$a['stage']] <=> $stageOrder[$b['stag
       <?php
       $features = [
           ['icon' => 'fa-arrow-up-right-dots', 'title' => 'Concept Articulation', 'body' => 'Experienced guidance for shaping a business idea into a viable proposition.'],
-          ['icon' => 'fa-ruler-combined', 'title' => 'Bulletproof Business Creation', 'body' => 'Time-tested templates, workflows, and best practices for rapid venture creation.'],
+          ['icon' => 'fa-ruler-combined', 'title' => 'Bulletproof Business Creation', 'body' => 'Time-tested templates, workflows, and best practices to get a business off the ground quickly.'],
           ['icon' => 'fa-bullhorn', 'title' => 'Scientific Market Validation', 'body' => 'A proven process for validating a business idea before investing time and resources.'],
           ['icon' => 'fa-screwdriver-wrench', 'title' => 'Hands-On Product Development', 'body' => 'Product development, coding, and CTO services for getting your product to market.'],
           ['icon' => 'fa-user-tie', 'title' => 'Professional Guidance', 'body' => 'Experienced entrperenurial coaching and support on tap, without hiring a team.'],
