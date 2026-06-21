@@ -154,11 +154,11 @@
     "background-image": "/assets/images/portfolio/bkgd_verniansea.png"
   },
   {
-    "name": "Venture",
-    "url": "",
-    "stage": "Building",
+    "name": "Ascend: Vanguard",
+    "url": "https://ascend.myremotecode.com/",
+    "stage": "Waitlist",
     "tagline": "A massively multiplayer realtime worldbuilding game set in the near future, focused on exploring and developing the stars. Players colonize, govern, and grow settlements alongside thousands of others in a persistent universe. It's civilization-building at galactic scale.",
-    "logo": "/assets/images/portfolio/logo2-venture_square.png",
+    "logo": "/assets/images/portfolio/logo1-ascend_square.png",
     "bg": "#000000",
     "text": "#8794ad",
     "border": "#8794ad",
